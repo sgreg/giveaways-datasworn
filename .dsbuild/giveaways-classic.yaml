@@ -1,0 +1,5 @@
+id: giveaways_classic
+source: /data/source_data/classic
+dependencies:
+  - classic
+  - delve

@@ -1,0 +1,5 @@
+id: giveaways_starforged
+source: /data/source_data/starforged
+dependencies:
+  - starforged
+  - sundered_isles
