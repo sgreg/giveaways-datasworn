@@ -16,12 +16,41 @@ assets:
       <<: *Source
     name: Giveaway Assets
     contents:
-      bearer:
-        name: Bearer
+      anomalist:
+        name: Anomalist
         <<: &PathAsset
           type: asset
           category: Path
           color: '#3f7faa'
+        _source:
+          <<: *Source
+          authors:
+            - name: Shawn Tomkin
+            - name: Zachary Matheson
+          date: 2026-06-24
+        abilities:
+          - text: |-
+              When you encounter a strange and unstable phenomena, you may [Begin the Scene](datasworn:move:starforged/scene_challenge/begin_the_scene) to investigate the source or nature of the anomaly. Then, when you [Finish the Scene](datasworn:move:starforged/scene_challenge/finish_the_scene) by proposing a theory:
+                * Strong hit: The theory proves correct. Mark 1 tick on your discoveries legacy track.
+                * Weak hit: As with a strong hit, but the knowledge exacts a cost. [Pay the Price](datasworn:move:starforged/fate/pay_the_price).
+                * Miss: You are dangerously wrong. [Pay the Price](datasworn:move:starforged/fate/pay_the_price), making it a dire cost.
+            enabled: true
+            enhance_moves:
+              - enhances:
+                  - move:starforged/scene_challenge/finish_the_scene
+                roll_type: action_roll
+                trigger:
+                  conditions:
+                    - text: By proposing a theory
+                      roll_options: null
+                      method: null
+          - text: |-
+              The mysteries deepen. When you score a strong hit to [Finish the Scene](datasworn:move:starforged/scene_challenge/finish_the_scene) in a dangerous or formidable challenge, you may also [Make a Discovery](datasworn:move:starforged/exploration/make_a_discovery) or [Confront Chaos](datasworn:move:starforged/exploration/confront_chaos) if it fits the established nature of the anomaly.
+          - text: |-
+              When you [Endure Stress](datasworn:move:starforged/suffer/endure_stress) (severe or major) as you confront an anomaly, you may envision how the hardship inspires a helpful recollection or epiphany. If you do, reroll any dice when you make a move (once only) to act on the insight.
+      bearer:
+        name: Bearer
+        <<: *PathAsset
         _source:
           <<: *Source
           authors:
@@ -54,6 +83,7 @@ assets:
               When you roll a 7 or 8 on your relic die, you are one with the eldritch powers of the relic. Take an automatic strong hit and +1 momentum.
           - text: |-
               When you successfully [Fulfill Your Vow](datasworn:move:starforged/quest/fulfill_your_vow) in a quest (extreme or epic) to free yourself of the relic, activate this ability at no cost, make a final roll of the relic die, and discard this asset. On 3–8, you embody lingering powers of the relic; improve a stat by +1. On 1–2, improve a stat by +1, but the relic leaves a mark; reduce your max health or spirit to 4.
+
       forger:
         name: Forger
         <<: *PathAsset
